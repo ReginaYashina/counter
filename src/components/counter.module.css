@@ -1,0 +1,22 @@
+.button {
+    padding: 10px 24px;
+
+    border-radius: 3px;
+    border: 1px solid black;
+    margin: 10px 5px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.disabled{
+    color: grey;
+    border-color: grey;
+    cursor: default;
+}
+
+.red{
+    color: red;
+}
