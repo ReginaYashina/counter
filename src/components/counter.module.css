@@ -1,22 +1,102 @@
-.button {
-    padding: 10px 24px;
+body {
+    min-height: 100vh;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    border-radius: 3px;
-    border: 1px solid black;
-    margin: 10px 5px;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+.button {
+    padding: 20px 50px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 22px;
     line-height: 20px;
     cursor: pointer;
+    background-color: #5a57ddc4;
+    color: white;
+    text-transform: uppercase;
 }
-.disabled{
+
+.disabled {
     color: grey;
     border-color: grey;
+    background-color: #dedede;
     cursor: default;
 }
 
-.red{
-    color: red;
+.board {
+    display: flex;
+    height: 70px;
+    background-color: #5a57ddc4;
+    border-radius: 5px;
+    padding: 50px 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.counterBoard {
+    align-items: center;
+    justify-content: center;
+    /*font-size: 68px;*/
+}
+
+.settingsBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.borders {
+    border: 2px solid #5a57ddc4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.counter {
+    display: inline-block;
+    width: 350px;
+    margin: 0 25px;
+}
+
+.btnWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red {
+    color: #ff0000;
+    font-size: 90px;
+}
+
+.settingsInputLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.settingsInputLabel input {
+    height: 25px;
+    width: 170px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.message{
+    font-size: 22px;
+    color: white;
+}
+
+.errorMessage{
+    color: #ff0000;
+}
+.errorInput input{
+    border: 2px solid #ff0000;
+    background-color: rgba(255, 0, 0, 0.52);
 }
