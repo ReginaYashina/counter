@@ -3,6 +3,7 @@ import s from './counter.module.css'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     disabled?: boolean
+
 };
 
 export const Button = (props:ButtonProps) => {
