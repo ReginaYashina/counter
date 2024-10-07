@@ -30,6 +30,7 @@ export const Counter = (props: CounterPropsType) => {
     const messagesWrapperClassName = isSet ? s.hide : ''
     const buttonWrapperClassName = `${s.btnWrapper} ${s.borders}`
     const isDisabled = count === maxValue || minValue >= maxValue
+    const isDisabledOnSet = isSet ? false : true
     const messages = minValue >= maxValue || maxValue < 0 || minValue < 0 ?
         <span className={`${s.message} ${s.errorMessage}`}>{'Incorrect value!'}</span> :
         <span className={s.message}>{'enter values and press "set"'}</span>
@@ -42,8 +43,8 @@ export const Counter = (props: CounterPropsType) => {
                 <div className={messagesWrapperClassName}>{messages}</div>
             </Board>
             <div className={buttonWrapperClassName}>
-                <Button onClick={setCountInc} disabled={isDisabled}>inc</Button>
-                <Button onClick={setCountReset} disabled={isDisabled}>reset</Button>
+                <Button onClick={setCountInc} disabled={isDisabled || isDisabledOnSet}>inc</Button>
+                <Button onClick={setCountReset} disabled={isDisabledOnSet}>reset</Button>
             </div>
         </div>
     );
