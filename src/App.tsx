@@ -62,7 +62,6 @@ function App() {
             />
             <Counter
                 count={count}
-                setCount={setCount}
                 maxValue={maxValue}
                 minValue={minValue}
                 isSet = {isClicked}

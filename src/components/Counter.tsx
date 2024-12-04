@@ -9,7 +9,6 @@ type CounterPropsType = {
     minValue: number
     isSet: boolean
     className?: string
-    setCount: (count: number) => void
     setCountInc: () => void
     setCountReset: () => void
 };
@@ -20,7 +19,6 @@ export const Counter = (props: CounterPropsType) => {
         minValue,
         isSet,
         className,
-        setCount,
         setCountInc,
         setCountReset
     } = props
@@ -29,7 +27,8 @@ export const Counter = (props: CounterPropsType) => {
     const countClassName = isSet ? s.counterResult : `${s.counterResult} ${s.hide}`
     const messagesWrapperClassName = isSet ? s.hide : ''
     const buttonWrapperClassName = `${s.btnWrapper} ${s.borders}`
-    const isDisabled = count === maxValue || minValue >= maxValue
+    const isDisabled = count === maxValue || minValue >= maxValue ||minValue >= maxValue || maxValue < 0 || minValue < 0 || !isSet
+    const resetIsDisabled = count === minValue ||minValue >= maxValue || maxValue < 0 || minValue < 0 || !isSet
     const messages = minValue >= maxValue || maxValue < 0 || minValue < 0 ?
         <span className={`${s.message} ${s.errorMessage}`}>{'Incorrect value!'}</span> :
         <span className={s.message}>{'enter values and press "set"'}</span>
@@ -43,7 +42,7 @@ export const Counter = (props: CounterPropsType) => {
             </Board>
             <div className={buttonWrapperClassName}>
                 <Button onClick={setCountInc} disabled={isDisabled}>inc</Button>
-                <Button onClick={setCountReset} disabled={isDisabled}>reset</Button>
+                <Button onClick={setCountReset} disabled={resetIsDisabled}>reset</Button>
             </div>
         </div>
     );

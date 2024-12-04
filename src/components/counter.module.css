@@ -24,6 +24,7 @@ body {
     border-color: grey;
     background-color: #dedede;
     cursor: default;
+    pointer-events: none;
 }
 
 .board {
